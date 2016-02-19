@@ -7,6 +7,21 @@ def initGrid(maxX, maxY):
 
     return grid
 
+def drawLabeledGrid(grid):
+    for x in range(0, len(grid)+1):
+        for y in range(0, len(grid[x-1])+1):
+            if x == 0:
+                if y != 0:
+                    print '   {0}'.format(y),
+            elif y == 0:
+                print x,
+            else:
+                if grid[x-1][y-1] == 1:
+                    print '  X',
+                else:
+                    print '  ',
+        print '\n'
+
 def drawGrid(grid):
     for x in range(0, len(grid)):
         for y in range(0, len(grid[x])):
@@ -32,5 +47,5 @@ def drawLine(grid, startX, startY, endX, endY):
 
 grid = initGrid(10, 10)
 drawLine(grid, 9, 9, 5, 6)
-drawGrid(grid)
+drawLabeledGrid(grid)
 print 'Done'
