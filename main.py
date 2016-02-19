@@ -30,10 +30,6 @@ def drawLine(grid, startX, startY, endX, endY):
             y = m * x + b
             grid[x][y] = 1
 
-
-    # grid[startX][startY] = 1
-    # grid[endX][endY] = 1
-
 grid = initGrid(10, 10)
 drawLine(grid, 9, 9, 5, 6)
 drawGrid(grid)
